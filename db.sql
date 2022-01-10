@@ -5,33 +5,32 @@ CREATE DATABASE contest;
 USE contest;
 
 CREATE TABLE contest (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id INTEGER PRIMARY KEY auto_increment,
     name TEXT,
     description TEXT
 );
 
 CREATE TABLE participant (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id INTEGER PRIMARY KEY auto_increment,
     name TEXT,
     email TEXT
 );
 
 CREATE TABLE price (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id INTEGER PRIMARY KEY auto_increment,
     text TEXT,
-    amount INTEGER,
-    FOREIGN KEY (contest_id) REFERENCES contest(id)
+    amount INTEGER
 );
 
 CREATE TABLE question (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id INTEGER PRIMARY KEY auto_increment,
     text TEXT,
     contest_id INTEGER,
     FOREIGN KEY (contest_id) REFERENCES contest(id)
 );
 
 CREATE TABLE answer (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id INTEGER PRIMARY KEY auto_increment,
     text TEXT,
     question_id INTEGER,
     correct BOOLEAN,
@@ -39,7 +38,7 @@ CREATE TABLE answer (
 );
 
 CREATE TABLE participant_answer (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id INTEGER PRIMARY KEY auto_increment,
     participant_id INTEGER,
     answer_id INTEGER,
     FOREIGN KEY (participant_id) REFERENCES participant(id),
@@ -47,7 +46,7 @@ CREATE TABLE participant_answer (
 );
 
 CREATE TABLE participant_contest (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id INTEGER PRIMARY KEY auto_increment,
     participant_id INTEGER,
     contest_id INTEGER,
     image TEXT,
@@ -56,14 +55,14 @@ CREATE TABLE participant_contest (
 );
 
 CREATE TABLE feedback_question (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id INTEGER PRIMARY KEY auto_increment,
     text TEXT,
     min INTEGER,
     max INTEGER
 );
 
 CREATE TABLE participant_feedback (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id INTEGER PRIMARY KEY auto_increment,
     participant_id INTEGER,
     feedback_question_id INTEGER,
     value INTEGER,
