@@ -7,7 +7,8 @@ USE contest;
 CREATE TABLE contest (
     id INTEGER PRIMARY KEY auto_increment,
     name TEXT,
-    description TEXT
+    description TEXT,
+    has_image BOOLEAN,
 );
 
 CREATE TABLE participant (
@@ -70,8 +71,8 @@ CREATE TABLE participant_feedback (
     FOREIGN KEY (feedback_question_id) REFERENCES feedback_question(id)
 );
 
-INSERT INTO contest (name, description) VALUES ('Contest 1', 'Description 1');
-INSERT INTO contest (name, description) VALUES ('Contest 2', 'Description 2');
+INSERT INTO contest (name, description, has_image) VALUES ('Contest 1', 'Description 1', false);
+INSERT INTO contest (name, description, has_image) VALUES ('Contest 2', 'Description 2', true);
 
 INSERT INTO price (text, amount) VALUES ('Price 1', 1);
 INSERT INTO price (text, amount) VALUES ('Price 2', 2);

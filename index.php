@@ -17,11 +17,13 @@ include_once('db-connection.php');
 
   <?php
 
-  $query = "SELECT * FROM contests";
+  $query = "SELECT * FROM contest";
   $result = mysqli_query($connection, $query);
-  $contest = mysqli_fetch_assoc($result);
 
-  echo "<h2>{$contest['name']}</h2>";
+  while ($row = mysqli_fetch_assoc($result)) {
+    echo '<h2><a href="contest.php?id=' . $row['id'] . '">' . $row['name'] . '</a></h2>';
+  }
+
   ?>
 
 </body>
