@@ -5,13 +5,13 @@ CREATE DATABASE contest;
 CREATE TABLE contest (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT,
-    description TEXT,
+    description TEXT
 );
 
 CREATE TABLE participant (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT,
-    email TEXT,
+    email TEXT
 );
 
 CREATE TABLE prices (
@@ -56,7 +56,7 @@ CREATE TABLE feedback_questions (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     text TEXT,
     min INTEGER,
-    max INTEGER,
+    max INTEGER
 );
 
 CREATE TABLE participant_feedback (
