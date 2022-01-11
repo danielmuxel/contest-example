@@ -1,5 +1,5 @@
 window.addEventListener("load", function () {
-  alert("It's loaded!");
+  // alert("It's loaded!");
 });
 
 const buttonNext = document.querySelector(".button-next");
