@@ -22,7 +22,8 @@ CREATE TABLE participant (
 CREATE TABLE price (
     id INTEGER PRIMARY KEY auto_increment,
     text TEXT,
-    amount INTEGER
+    amount INTEGER,
+    available INTEGER
 );
 
 CREATE TABLE question (
@@ -76,10 +77,10 @@ CREATE TABLE participant_feedback (
 INSERT INTO contest (name, description, has_image) VALUES ('Contest 1', 'Description 1', false);
 INSERT INTO contest (name, description, has_image) VALUES ('Contest 2', 'Description 2', true);
 
-INSERT INTO price (text, amount) VALUES ('Price 1', 1);
-INSERT INTO price (text, amount) VALUES ('Price 2', 2);
-INSERT INTO price (text, amount) VALUES ('Price 3', 10);
-INSERT INTO price (text, amount) VALUES ('Price 4', 20);
+INSERT INTO price (text, amount, available) VALUES ('Price 1', 1, 1);
+INSERT INTO price (text, amount, available) VALUES ('Price 2', 2, 2);
+INSERT INTO price (text, amount, available) VALUES ('Price 3', 10, 10);
+INSERT INTO price (text, amount, available) VALUES ('Price 4', 20, 20);
 
 INSERT INTO question (text, contest_id) VALUES ('Question 1-1', 1);
 

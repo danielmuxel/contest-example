@@ -17,9 +17,6 @@ include_once('./helpers/db-connection.php');
   <h1>Contests</h1>
 
   <?php
-
-  var_dump($post);
-
   $query = "SELECT * FROM contest";
   $result = mysqli_query($connection, $query);
 
