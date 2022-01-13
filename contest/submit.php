@@ -33,7 +33,7 @@ $prices = mysqli_fetch_all($priceResult, MYSQLI_ASSOC);
 
 $priceList = [];
 foreach ($prices as $price) {
-  for ($i=0; $i < $price["available"]; $i++) { 
+  for ($i = 0; $i < $price["available"]; $i++) {
     array_push($priceList, $price['id']);
   }
 }
@@ -65,8 +65,8 @@ $win = mysqli_fetch_assoc($winResult);
 <body>
   <h1>
     Done you won
-     <?php echo $win["text"] ?>
-</h1>
+    <?php echo $win["text"] ?>
+  </h1>
   <?php
   var_dump($post);
   echo '<br>';
