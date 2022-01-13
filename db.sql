@@ -8,13 +8,15 @@ CREATE TABLE contest (
     id INTEGER PRIMARY KEY auto_increment,
     name TEXT,
     description TEXT,
-    has_image BOOLEAN,
+    has_image BOOLEAN
 );
 
 CREATE TABLE participant (
     id INTEGER PRIMARY KEY auto_increment,
     name TEXT,
-    email TEXT
+    email TEXT,
+    contest_id INTEGER,
+    FOREIGN KEY (contest_id) REFERENCES contest(id)
 );
 
 CREATE TABLE price (
